@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Watch Party</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="watch-party.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="watch-party-page">
+    <div class="watch-party-container">
+        <!-- Video Player Section -->
+        <div class="video-section">
+            <div class="video-container">
+                <video id="partyVideo" controls>
+                    <source src="strange.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                    <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+                    <button id="stopBtn"><i class="fas fa-stop"></i></button>
+                    <div class="volume-control">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="100">
+                    </div>
+                    <button id="fullscreenBtn"><i class="fas fa-expand"></i></button>
+                    <button id="exitPartyBtn"><i class="fas fa-sign-out-alt"></i> Exit Party</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Section -->
+        <div class="sidebar">
+            <!-- Party Members -->
+            <div class="party-members">
+                <h3>Party Members</h3>
+                <div class="members-list">
+                    <div class="member">
+                        <img src="images/bluemember.jpg" alt="Host">
+                        <span class="member-name">You (Host)</span>
+                    </div>
+                    <div class="member">
+                        <img src="images/greenmember.png" alt="Member">
+                        <span class="member-name">Alex</span>
+                    </div>
+                    <div class="member">
+                        <img src="images/orangemember.jpg" alt="Member">
+                        <span class="member-name">Sarah</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="chat-section">
+                <h3>Party Chat</h3>
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be added here dynamically -->
+                </div>
+                <div class="chat-input">
+                    <div class="emoji-picker">
+                        <button class="emoji-btn">😊</button>
+                        <div class="emoji-list">
+                            <span>😊</span>
+                            <span>❤️</span>
+                            <span>😂</span>
+                            <span>😮</span>
+                            <span>😢</span>
+                            <span>👏</span>
+                            <span>🎉</span>
+                            <span>🔥</span>
+                        </div>
+                    </div>
+                    <input type="text" id="messageInput" placeholder="Type a message...">
+                    <button id="sendMessageBtn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="watch-party.js"></script>
+</body>
+</html>

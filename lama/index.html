@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone - Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">TV Shows</a>
+                <a href="#" class="nav-link">Movies</a>
+                <a href="#" class="nav-link">New & Popular</a>
+                <a href="#" class="nav-link">My List</a>
+            </div>
+            <div class="nav-right">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Titles, people, genres">
+                </div>
+                <div class="profile">
+                    <img src="images/profile.png" alt="Profile">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay loop muted playsinline poster="https://occ-0-299-300.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVr8nYuC0iExfXMKkkxu0LgeNTxWqQbS1DvSUXmD3tM-9yxCb0ySHH5FTfvJj74pUGaP1kFkWYXfkZt0dLxX7XqVEg.jpg">
+            <source src="strange.m4v" type="video/mp4">
+            <!-- Add fallback sources if needed -->
+            <source src="strange.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Stranger Things</h1>
+            <p class="hero-description">When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.</p>
+            <div class="hero-buttons">
+                <button class="play-btn"><i class="fas fa-play"></i> Play</button>
+                <button class="watch-party-btn" id="startWatchParty"><i class="fas fa-users"></i> Start Watch Party</button>
+                <button class="info-btn"><i class="fas fa-info-circle"></i> More Info</button>
+            </div>
+        </div>
+        <button class="mute-btn" id="muteButton">
+            <i class="fas fa-volume-mute"></i>
+        </button>
+    </section>
+
+    <!-- Watch Party Lobby -->
+    <section class="watch-party-lobby" id="watchPartyLobby" style="display: none;">
+        <div class="lobby-container">
+            <button class="close-lobby" id="closeLobby">✕</button>
+            <div class="party-code">
+                <input type="text" value="ABC123" readonly>
+                <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="party-members">
+                <h3>Party Members</h3>
+                <div class="members-grid">
+                    <div class="member">
+                        <img src="images/bluemember.jpg" alt="Host">
+                        <span class="member-name">You (Host)</span>
+                    </div>
+                    <div class="member">
+                        <img src="images/greenmember.png" alt="Member">
+                        <span class="member-name">Alex</span>
+                    </div>
+                    <div class="member">
+                        <img src="images/orangemember.jpg" alt="Member">
+                        <span class="member-name">Sarah</span>
+                    </div>
+                    <div class="member">
+                        <img src="images/redmember.jpg" alt="Member">
+                        <span class="member-name">Mike</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reaction-panel">
+                <h3>Reactions</h3>
+                <div class="reactions">
+                    <button class="reaction-btn">😊</button>
+                    <button class="reaction-btn">❤️</button>
+                    <button class="reaction-btn">😮</button>
+                    <button class="reaction-btn">😢</button>
+                    <button class="reaction-btn">👏</button>
+                </div>
+            </div>
+            <button class="start-party-btn">Start Party</button>
+        </div>
+    </section>
+
+    <!-- AI Playlist Generator -->
+    <section class="playlist-generator" id="playlistGenerator">
+        <div class="generator-container">
+            <h2>AI Playlist Generator</h2>
+            <div class="mood-selector">
+                <div class="mood-card" data-mood="rainy-paris">
+                    <i class="fas fa-cloud-rain"></i>
+                    <span>Rainy Day in Paris</span>
+                </div>
+                <div class="mood-card" data-mood="cozy-night">
+                    <i class="fas fa-moon"></i>
+                    <span>Cozy Night In</span>
+                </div>
+                <div class="mood-card" data-mood="summer-vibes">
+                    <i class="fas fa-sun"></i>
+                    <span>Summer Vibes</span>
+                </div>
+                <div class="mood-card" data-mood="action-packed">
+                    <i class="fas fa-bolt"></i>
+                    <span>Action Packed</span>
+                </div>
+            </div>
+            <div class="playlist-results" id="playlistResults">
+                <!-- Generated playlist will appear here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Rows -->
+    <section class="content-rows">
+        <div class="row">
+            <h2>Trending Now</h2>
+            <div class="row-content">
+                <!-- Content items will be dynamically added here -->
+            </div>
+        </div>
+        <div class="row">
+            <h2>Popular on Netflix</h2>
+            <div class="row-content">
+                <!-- Content items will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
